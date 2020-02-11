@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
 
     * {
         padding: 0;
@@ -18,8 +17,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        font-family: 'Nunito', Helvetica, Arial, sans-serif;
         font-size: .9rem;
+
+      a {
+        font-family: 'Nunito'
+        }
+
+      button {
+        font-family: 'Nunito';
+        }
+
     }
 
 
