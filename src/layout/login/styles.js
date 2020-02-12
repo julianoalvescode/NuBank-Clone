@@ -33,6 +33,27 @@ export const FormBox = styled.div`
     @media (max-width: 1249px) {
       width: 40%;
     }
+    @media (max-width: 997px){
+      width: 45%;
+    }
+    @media (max-width: 904px){
+      width: 50%;
+    }
+    @media (max-width: 804px){
+      width: 55%;
+    }
+    @media (max-width: 704px) {
+      width: 60%;
+    }
+    @media (max-width: 681px){
+      width: 66%;
+    }
+    @media (max-width: 615px){
+      width: 72%;
+    }
+    @media (max-width: 414px){
+      width: 98%;
+    }
     height: 520px;
 
     h2 {

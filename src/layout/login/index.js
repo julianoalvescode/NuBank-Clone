@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+import $ from 'jquery'
+import 'jquery-mask-plugin/dist/jquery.mask'
+
 import { Content, FormBox, Body } from './styles';
 import { Container } from './../../styles/styles'
 
@@ -9,7 +12,7 @@ import { Helmet } from 'react-helmet';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-import  onLogin  from './../../auth/auth'
+import  { onLogin }  from './../../auth/auth'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,24 +38,31 @@ const Login = ({info}) => {
 
   const classes = useStyles();
 
-  useEffect(() => {
-
-    console.log(info.cpf)
-
-  },[info.cpf])
-
   const [cpf, setCPF] = useState(info.cpf)
   const [password, setPASS] = useState(info.password)
 
   const changeCPF = (e) => {
     setCPF(e.target.value)
-    console.log(cpf)
+
+    // console.log(cpf)
   }
 
   const changePASS = (e) => {
     setPASS(e.target.value)
-    console.log(password)
+
+    // console.log(password)
   }
+
+  const inLogin = (e) => {
+    e.preventDefault()
+
+    onLogin(cpf, password)
+
+  }
+
+  $(document).ready(function(){
+    $('#standard-cpf-input').mask('000.000.000-00', {reverse: true});
+  });
 
 
   return(
@@ -89,7 +99,7 @@ const Login = ({info}) => {
                   />
                 </div>
                 <div className="btn-block">
-                  <button onClick={onLogin} className="btn-submit" type="submit">Continuar</button>
+                  <button onClick={inLogin} className="btn-submit" type="submit">Continuar</button>
                 </div>
               </form>
               <div className="btn-block-password">

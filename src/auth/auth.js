@@ -2,10 +2,10 @@
 import { connect } from 'react-redux'
 
 
-const onLogin = (e, {info}) => {
-  e.preventDefault()
+export const onLogin = (cpf, password) => {
 
-  console.log('teste')
+
+  localStorage.setItem('token', 'QpwL5tke4Pnpja7X4')
 
 }
 
