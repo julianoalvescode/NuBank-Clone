@@ -10,6 +10,9 @@ export const Routes = () => (
     <>
         <BrowserRouter>
           <Switch>
+            <Route exact path="/">
+              <Redirect to="/login" />
+            </Route>
             <Route exact component={Login} path="/login"/>
             <Route exact component={Register} path="/register"/>
             <Route exact component={Dashboard} path="/home"/>
